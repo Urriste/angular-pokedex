@@ -1,0 +1,19 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
+.navbar-brand {
+  font-family: "Pokemon";
+  color: #ffcc01;
+  font-size: 24px;
+  text-shadow: -3px 0 #385ba8, 0 3px #385ba8, 3px 0 #385ba8, 0 -3px #385ba8;
+  margin: 0 0 0 10px;
+}
+
+.navbar-brand:hover {
+  color: #385ba8;
+  text-shadow: -3px 0 #ffcc01, 0 3px #ffcc01, 3px 0 #ffcc01, 0 -3px #ffcc01;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+}

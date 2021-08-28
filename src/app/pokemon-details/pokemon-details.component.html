@@ -1,0 +1,56 @@
+<div class="loader" *ngIf="!pokemon">
+  <h1 class="loading-message">CARGANDO</h1>
+</div>
+
+<app-navbar *ngIf="pokemon"></app-navbar>
+
+<div class="container" *ngIf="pokemon">
+  <div class="controls">
+    <a class="controls-btn" [href]="'/pokemon/' + prevId" *ngIf="pokeId > 1"
+      >Prev</a
+    >
+    <a class="controls-btn" [href]="'/pokemon/' + nextId" *ngIf="pokeId < 251"
+      >Next</a
+    >
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+          pokemon.id
+        }}.png"
+        alt="poke img"
+        class="poke-img"
+      />
+      <h1 class="poke-name">{{ pokemon.name | titlecase }}</h1>
+      <p class="poke-index">#{{ pokemon.game_indices[3].game_index }}</p>
+      <div class="types-container">
+        <div class="types">
+          <p *ngFor="let type of pokemon.types">
+            <span
+              class="type-span"
+              [ngStyle]="{ 'background-color': typeStyles(type.type.name) }"
+            >
+              {{ type.type.name | titlecase }}</span
+            >
+          </p>
+        </div>
+      </div>
+      <h4 class="stats-title">Base Stats</h4>
+      <div class="stats" *ngFor="let stat of pokemon.stats">
+        <p class="stat-name">{{ stat.stat.name | titlecase }}</p>
+        <div class="progress progressbar">
+          <div
+            class="progress-bar progress-bar-striped"
+            role="progressbar"
+            aria-valuemax="300"
+            [ngStyle]="{ width: stat.base_stat + '%' }"
+            [attr.aria-valuenow]="stat.base_stat"
+          >
+            {{ stat.base_stat }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

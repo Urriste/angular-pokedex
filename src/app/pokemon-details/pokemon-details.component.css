@@ -1,0 +1,131 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center;
+  height: 100%;
+}
+
+.controls-btn {
+  color: rgb(99, 99, 99);
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 3px 15px;
+  font-size: 15px;
+  margin: 25px 0 0 0;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.controls-btn:hover {
+  background-color: rgb(204, 204, 204);
+}
+
+.go-back__btn:hover {
+  text-decoration: underline;
+}
+
+.poke-img {
+  width: 200px;
+}
+
+.poke-name {
+  font-size: 45px;
+}
+
+.poke-index {
+  font-size: 35px;
+  margin: 0 0 25px 0;
+}
+
+.card {
+  text-align: center;
+  padding: 25px 50px;
+  margin: 50px 0 50px 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.types-container,
+.abilities-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.types-message,
+.abilities-message {
+  font-weight: bold;
+}
+
+.types,
+.abilities {
+  display: flex;
+  justify-content: center;
+}
+
+.types p {
+  margin: 0px 10px 15px 10px;
+}
+
+.type-span {
+  color: white;
+  border-radius: 5px;
+
+  padding: 3px 15px;
+  font-size: 15px;
+  margin: 0;
+  display: inline-block;
+  font-weight: bold;
+}
+.ability-span {
+  color: black;
+  border-radius: 5px;
+
+  padding: 3px 5px;
+  font-size: 15px;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.loader {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loading-message {
+  font-family: "Pokemon";
+  color: #ffcc01;
+  font-size: 60px;
+  text-shadow: -3px 0 #385ba8, 0 3px #385ba8, 3px 0 #385ba8, 0 -3px #385ba8;
+  animation: load 2s infinite;
+}
+
+.stats {
+  text-align: left;
+  margin: 0 0 25px 0;
+}
+
+.stat-name {
+  font-weight: bold;
+}
+
+.stats-title {
+  margin: 25px 0 10px 0;
+}
+
+@keyframes load {
+  50% {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .card {
+    padding: 25px 150px;
+  }
+}

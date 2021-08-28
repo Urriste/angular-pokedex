@@ -1,0 +1,34 @@
+<div class="loader" *ngIf="!pokemones">
+  <h1 class="loading-message">CARGANDO...</h1>
+</div>
+
+<app-navbar id="start" *ngIf="pokemones"></app-navbar>
+<div *ngIf="pokemones" class="container">
+  <div
+    class="card"
+    *ngFor="let pokemon of pokemones; index as i"
+    (click)="navigate(i)"
+  >
+    <div class="card-header">
+      <h5 class="card-title">
+        {{ pokemon.name | titlecase }}
+      </h5>
+      <p class="card-id">#{{ i + 1 }}</p>
+    </div>
+    <div class="card-body">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+          i + 1
+        }}.png"
+        class="card-img-top"
+        alt="..."
+      />
+
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </div>
+</div>
+
+<a class="button-top" href="#start">
+  <img src="../../assets/img/top (1).png" class="top-img" alt="" />
+</a>
